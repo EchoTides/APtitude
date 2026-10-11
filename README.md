@@ -27,18 +27,3 @@ AP + aptitude：帮你练出 AP 考试的好状态。
 4. 首页点击课程卡片 → Generate Questions 开始刷题
 5. 页面内 **Tutorial** 导航包含完整使用教程（含 FAQ）
 
-## 🛠 技术说明
-
-- **单文件** `index.html`：内联 CSS + 原生 JavaScript，零外部依赖
-- 调用 `POST {baseURL}/chat/completions`（Anthropic 为 `/v1/messages`）；出题使用 `response_format: {"type":"json_object"}`，服务商不支持时自动降级重试一次
-- 解析容错：自动剥离 ```json 代码围栏、字段级校验、友好错误提示
-- 所有动态内容经 HTML 转义（XSS 防护）；数据持久化于 localStorage（配置 + 练习记录）
-
-## 📦 部署到 GitHub Pages
-
-1. 本仓库即静态站点：`index.html` + `.nojekyll`
-2. 推送到 GitHub 后，在仓库 **Settings → Pages** 将 Source 设为 `main` 分支根目录（`/`）保存即可
-
----
-
-Made with ♥ by Ambar
